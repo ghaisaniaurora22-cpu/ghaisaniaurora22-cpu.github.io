@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora Shop — Elegan & Aestetik</title>
+  <meta name="description" content="Aurora Shop: toko baju elegan dan aestetik. Warna putih & pink muda, dengan animasi halus, slider foto, keranjang, dan checkout." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <img src="assets/logo.svg" alt="Aurora Shop Logo" />
+        <span class="brand-text">Aurora Shop</span>
+      </a>
+      <nav class="menu">
+        <a href="#koleksi">Koleksi</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <button class="cart-button" aria-label="Buka keranjang" id="openCartBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M6 6h15l-1.5 9h-12z" stroke="#7a044a" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="9" cy="20" r="1.5" fill="#7a044a"/><circle cx="18" cy="20" r="1.5" fill="#7a044a"/>
+        </svg>
+        <span id="cartCount" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Slider -->
+    <section class="hero">
+      <div class="slider" id="heroSlider" aria-label="Slider foto Aurora Shop">
+        <div class="slides">
+          <div class="slide"><img src="assets/slide1.svg" alt="Elegan & Aestetik" /></div>
+          <div class="slide"><img src="assets/slide2.svg" alt="Koleksi Baru" /></div>
+          <div class="slide"><img src="assets/slide3.svg" alt="Diskon Spesial" /></div>
+        </div>
+        <button class="slider-btn prev" id="prevSlide" aria-label="Sebelumnya">‹</button>
+        <button class="slider-btn next" id="nextSlide" aria-label="Berikutnya">›</button>
+        <div class="dots" id="sliderDots" aria-hidden="true"></div>
+      </div>
+      <div class="hero-cta container">
+        <h1 class="fade-in-up">Elegan. Aestetik. Kamu.</h1>
+        <p class="fade-in-up delay-1">Temukan outfit impianmu di Aurora Shop—kurasi gaya modern bernuansa putih & pink muda.</p>
+        <a href="#koleksi" class="btn-primary fade-in-up delay-2">Belanja Sekarang</a>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">• • •</div>
+    </section>
+
+    <!-- Koleksi -->
+    <section id="koleksi" class="container section">
+      <header class="section-header">
+        <h2>Koleksi Pilihan</h2>
+        <div class="filters">
+          <input type="search" id="searchInput" placeholder="Cari item… (mis. gaun, blazer)" aria-label="Cari di koleksi"/>
+          <select id="sortSelect" aria-label="Urutkan">
+            <option value="pop">Rekomendasi</option>
+            <option value="price-asc">Harga: Terendah</option>
+            <option value="price-desc">Harga: Tertinggi</option>
+            <option value="name-asc">Nama: A–Z</option>
+          </select>
+        </div>
+      </header>
+
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="container section about">
+      <div class="about-card">
+        <h3>Tentang Aurora Shop</h3>
+        <p>Aku pemiliknya—Aurora Shop lahir dari cinta pada siluet elegan dan palet lembut. Setiap koleksi dipilih untuk memancarkan keanggunan tanpa berlebihan.</p>
+        <ul>
+          <li>Desain minimal, potongan bersih</li>
+          <li>Bahan nyaman & tahan lama</li>
+          <li>Warna putih & pink muda yang menenangkan</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="contact section">
+      <div class="container contact-inner">
+        <div class="contact-text">
+          <h3>Butuh bantuan?</h3>
+          <p>DM kami di Instagram @aurorashop atau email ke <a href="mailto:hello@aurorashop.id">hello@aurorashop.id</a>. Kami senang membantu!</p>
+        </div>
+        <a href="checkout.html" class="btn-outline">Lanjut ke Checkout</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle" role="dialog">
+    <div class="cart-header">
+      <h3 id="cartTitle">Keranjang</h3>
+      <button class="icon-btn" id="closeCartBtn" aria-label="Tutup keranjang">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">Rp0</strong></div>
+      <div class="cart-actions">
+        <a href="checkout.html" class="btn-primary w-full">Checkout</a>
+      </div>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Aurora Shop • Elegan & Aestetik</p>
+      <a class="to-top" href="#">↑ Kembali ke atas</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
