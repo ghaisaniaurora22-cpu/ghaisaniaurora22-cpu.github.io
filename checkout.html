@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Aurora Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="checkout-page">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Aurora Shop Logo" />
+        <span class="brand-text">Aurora Shop</span>
+      </a>
+      <a href="index.html" class="btn-outline small">← Kembali Belanja</a>
+    </div>
+  </header>
+
+  <main class="container section checkout">
+    <h1>Checkout</h1>
+    <div class="checkout-grid">
+      <form id="checkoutForm" class="card">
+        <h3>Data Pesanan</h3>
+        <label>Nama Lengkap<input required name="name" placeholder="Nama kamu" /></label>
+        <label>Email<input required type="email" name="email" placeholder="email@kamu.com" /></label>
+        <label>Telepon<input required name="phone" placeholder="08xxxxxxxxxx" /></label>
+        <label>Alamat Lengkap<textarea required name="address" rows="3" placeholder="Nama jalan, nomor rumah, kecamatan, kota"></textarea></label>
+        <label>Metode Pembayaran
+          <select name="payment" required>
+            <option value="transfer">Transfer Bank</option>
+            <option value="ewallet">E-Wallet</option>
+            <option value="cod">COD (Bayar di Tempat)</option>
+          </select>
+        </label>
+        <button class="btn-primary w-full" type="submit">Buat Pesanan</button>
+        <p class="helper">*Simulasi tanpa pembayaran. Kamu akan melihat ringkasan pesanan.</p>
+      </form>
+
+      <aside class="card order-summary">
+        <h3>Ringkasan</h3>
+        <div id="summaryItems" class="summary-items"></div>
+        <div class="cart-total">
+          <span>Total</span><strong id="summaryTotal">Rp0</strong>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="orderModal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-inner card">
+      <h3>Pesanan Berhasil ✨</h3>
+      <p id="orderText">Terima kasih!</p>
+      <div class="row">
+        <a href="index.html" class="btn-outline">Kembali ke Toko</a>
+        <button id="clearCart" class="btn-primary">Kosongkan Keranjang</button>
+      </div>
+    </div>
+  </div>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Aurora Shop</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
